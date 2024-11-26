@@ -22,7 +22,7 @@ require_once("config/conexion.php");
     ?>
 
     <div class="container">
-        <h1>Registro Portal UEH</h1>
+        <h1>´Portal Cautivo UEH</h1>
         <div class="col-md-8">
             <h2>Información Personal</h2>
             <p>Por favor complete los siguientes datos para continuar con el registro.</p>
