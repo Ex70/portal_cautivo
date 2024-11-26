@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Flujo de Reparación de Fugas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.15.0/flowchart.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.15.0/flowchart.min.js"></script>
+</head>
+<body>
+
+<h2>Diagrama de Flujo de Identificación y Reparación de Fugas de Agua</h2>
+<div id="diagram"></div>
+
+<script>
+    const diagramCode = `
+    st=>start: Inicio: Comienza el proceso de identificación y reparación
+    ev=>end: Fin: Termina el proceso de identificación y reparación
+    op1=>operation: ¿Fuga visible?: Verificar si la fuga de agua es visible
+    op2=>operation: Inspección Visual: Realizar una inspección visual
+    op3=>operation: Reparar Tubería: Realizar la reparación de la tubería
+    op4=>operation: Registrar Mantenimiento: Registrar las actividades de mantenimiento
+    cond1=>condition: ¿Fuga visible?
+    cond2=>condition: ¿Ubicar Fuga?
+    cond3=>condition: ¿Reparación Completada?
+
+    st->cond1
+    cond1(yes)->op2
+    cond1(no)->op1
+    op1->cond2
+    cond2(yes)->op3
+    cond2(no)->op2
+    op3->cond3
+    cond3(yes)->op4
+    cond3(no)->op3
+    op4->ev
+    `;
+
+    const diagram = flowchart.parse(diagramCode);
+    diagram.drawSVG('diagram', {
+        'line-width': 2,
+        'maxWidth': 3,
+        'font-size': '14px',
+        'font-family': 'Arial, sans-serif',
+        'symbols': {
+            'start': { 'font-color': '#fff', 'fill': '#76B900' },
+            'end': { 'font-color': '#fff', 'fill': '#FF6347' },
+            'operation': { 'font-color': '#000', 'fill': '#87CEEB' },
+            'condition': { 'font-color': '#000', 'fill': '#FFEB3B' }
+        },
+        'flowstate': {
+            'highlight': { 'fill': '#d3d3d3', 'font-size': '14px' }
+        }
+    });
+</script>
+
+</body>
+</html>

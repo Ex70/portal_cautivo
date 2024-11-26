@@ -1,0 +1,90 @@
+*{
+    font-family: "Robot", sans-serif;
+}
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.navbar-brand{
+    background-image: url(/img/logo-header-ueh.jpg);
+}
+.navbar-brand img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+.container {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #f2f2f2;
+    width: 100%;
+}
+
+.container h1 {
+    text-align: center;
+    color: #333;
+    font-size: 32px;
+
+}
+.container h2{
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.container p {
+    font-size: 12px;
+}
+
+.container hr{
+    width: 100%;
+    margin: 20px 0;
+}
+
+.card{
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px;
+    
+}
+
+.card-body{
+    width:100% auto;
+    height: 100% auto;
+}
+
+
+.card-body-1 img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    align-items: center;
+    display: flex;
+
+}
+.col-md-6{
+    width: 100% auto;
+    height: 100% auto;
+
+}
+
+
+
+.form-control{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 10px 10px 10px;
+}
+
+.btn-primary{
+    margin-top: 10px;
+    padding: 10px 20px;
+}
+
