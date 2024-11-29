@@ -38,18 +38,18 @@ require_once("config/conexion.php");
                                     <div class="col-md-12 ">
                                         <div class="form-group">
                                             <label for="fullname">Nombre Completo:</label>
-                                            <input type="text" class="form-control" id="fullname" name="fullname">
+                                            <input type="text" class="form-control" id="fullname" name="fullname" required>
                                         </div>       
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="email">Email:</label>
-                                                    <input type="text" class="form-control" id="email" name="email">
+                                                    <input type="text" class="form-control" id="email" name="email" required>
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <label for="id_dominio">Seleccione su dominio de correo electronico:</label>
-                                                    <select id="id_dominio" name="id_dominio" class="form-control" size="1">
+                                                    <select id="id_dominio" name="id_dominio" class="form-control" size="1" required>
                                                         <!-- <option value="Aguascalientes">Aguascalientes</option> -->
                                                         <?php
                                                         $sql = "SELECT id, nombre FROM dominios";
@@ -69,21 +69,21 @@ require_once("config/conexion.php");
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="phone">Telefono:</label>
-                                                <input type="text" class="form-control" id="phone" name="phone">
+                                                <input type="text" class="form-control" id="phone" name="phone" required>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="edad">Edad:</label>
-                                                <input type="text" class="form-control" id="edad" name="edad">
+                                                <input type="text" class="form-control" id="edad" name="edad" required>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="id_entidades">Estado de donde nos visita:</label>
-                                    <select id="id_entidades" name="id_entidades" class="form-control" size="3">
+                                    <select id="id_entidades" name="id_entidades" class="form-control" size="3" required>
                                         <!-- <option value="Aguascalientes">Aguascalientes</option> -->
                                         <?php
                                         $sql = "SELECT id, nombre FROM entidades";
@@ -105,7 +105,7 @@ require_once("config/conexion.php");
                                     <div class="col-md-6">
                                         <div class="card">
                                             <label for="id_vistas">¿Donde nos vieron?</label>
-                                            <select id="id_vistas" name="id_vistas" class="form-control" size="3">
+                                            <select id="id_vistas" name="id_vistas" class="form-control" size="3" required>
                                                 <?php
                                                 $sql = "SELECT id, nombre FROM vistas";
                                                 $result = $conn->query($sql);
@@ -123,7 +123,7 @@ require_once("config/conexion.php");
                                         <div class="card">
                                             <div class="form-group">
                                                 <label for="id_redes">Redes Sociales</label>
-                                                <select multiple class="form-control" id="id_redes" name="id_redes" size="3">
+                                                <select multiple class="form-control" id="id_redes" name="id_redes" size="3" required>
                                                     <?php
                                                     $sql = "SELECT id, nombre FROM redes_sociales";
                                                     $result = $conn->query($sql);
