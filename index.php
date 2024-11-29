@@ -7,7 +7,7 @@ require_once("config/conexion.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../portal_cautivo/css/styles.css">
+    <link rel="stylesheet" href="../portal_ueh/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,11 +18,11 @@ require_once("config/conexion.php");
 <body>
     <!-- Navbar -->
     <?php
-    include "../portal_cautivo/view/navbar.php";
+    // include "../portal_ueh/view/navbar.php";
     ?>
 
     <div class="container">
-        <h1>portal de pitos ueh</h1>    
+        <h1>Registro UEH</h1>    
         <hr>
         <div class="row">
             <div class="col-md-12">
@@ -33,22 +33,28 @@ require_once("config/conexion.php");
                             <p>Por favor complete los siguientes datos para continuar con el registro.</p>
                         </div>
                         <form action="config/form.php" method="POST" id="registrationForm">
-                            <div class="container">    
-                                <div class="form-group">
-                                    <label for="fullname">Nombre Completo:</label>
-                                    <input type="text" class="form-control" id="fullname" name="fullname">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email:</label>
-                                    <input type="text" class="form-control" id="email" name="email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Telefono:</label>
-                                    <input type="text" class="form-control" id="phone" name="phone">
-                                </div>
-                                <div class="form-group">
-                                    <label for="edad">Edad:</label>
-                                    <input type="text" class="form-control" id="edad" name="edad">
+                            <div class="container">
+                                <div class="row">                                
+                                    <div class="col-md-6 ">
+                                        <div class="form-group">
+                                            <label for="fullname">Nombre Completo:</label>
+                                            <input type="text" class="form-control" id="fullname" name="fullname">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email:</label>
+                                            <input type="text" class="form-control" id="email" name="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="phone">Telefono:</label>
+                                            <input type="text" class="form-control" id="phone" name="phone">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edad">Edad:</label>
+                                            <input type="text" class="form-control" id="edad" name="edad">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="id_entidades">Estado de donde nos visita:</label>
@@ -65,14 +71,13 @@ require_once("config/conexion.php");
                                         ?>
                                     </select>
                                 </div>
-
+                                <hr>
                                 <div class="card-header">
                                     <h2>Redes Sociales</h2>
                                     <p>Por favor complete los siguientes datos para continuar con el registro.</p>
                                 </div>
-                                <hr>
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="card">
                                             <label for="id_vistas">¿Donde nos vieron?</label>
                                             <select id="id_vistas" name="id_vistas" class="form-control" size="3">
@@ -89,7 +94,7 @@ require_once("config/conexion.php");
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="card">
                                             <div class="form-group">
                                                 <label for="redes_sociales">Redes Sociales</label>

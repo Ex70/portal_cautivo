@@ -5,21 +5,15 @@
 
 <!-- Navbar -->
 <nav class="navbar">
-    <a class="navbar-brand" href="#">
-        <!-- <img src="../img/logo-header-ueh.jpg" alt=""> -->
+    <a class="navbar-brand" href="https://euro.ueh.edu.mx/">
+        <img src="/img/logo-ueh.png" alt="">
     </a>
     <ul class="nav justify-content-end">
         <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link" href="">
+        
+            
+            UEH</a>
         </li>
     </ul>
 </nav>
