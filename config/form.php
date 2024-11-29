@@ -9,11 +9,12 @@ try {
     $edad = $_POST ['edad'];
     $id_entidades = $_POST ['id_entidades'];
     $id_vistas = $_POST ['id_vistas'];
-    $redes_sociales = $_POST ['redes_sociales'];
+    $id_redes = $_POST ['id_redes'];
+    $id_dominio = $_POST ['id_dominio'];
 
 
 
-    $sql = "INSERT INTO usuario (fullname, email, phone, edad, id_entidades, id_vistas, redes_sociales) VALUES (:fullname, :email, :phone, :edad, :id_entidades, :id_vistas, :redes_sociales)";
+    $sql = "INSERT INTO usuario (fullname, email, phone, edad, id_entidades, id_vistas, id_redes, id_dominio) VALUES (:fullname, :email, :phone, :edad, :id_entidades, :id_vistas, :id_redes, :id_dominio)";
     // preparar la consulta y ligar los parámetros al mensaje SQL
     $stmt = $conn->prepare ($sql);
 
@@ -23,7 +24,8 @@ try {
     $stmt->bindParam(":edad", $edad);
     $stmt->bindParam(":id_entidades", $id_entidades);
     $stmt->bindParam(":id_vistas", $id_vistas);
-    $stmt->bindParam(":redes_sociales", $redes_sociales);
+    $stmt->bindParam(":id_redes", $id_redes);
+    $stmt->bindParam(":id_dominio", $id_dominio);
     $stmt->execute();
 
 

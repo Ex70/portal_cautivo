@@ -22,37 +22,62 @@ require_once("config/conexion.php");
     ?>
 
     <div class="container">
-        <h1>Registro UEH</h1>    
+        <h1>Registro UEH</h1>
         <hr>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
                         <div class="card-header">
-                            <h2>Redes Sociales</h2>
+                            <h2>Formulario Universidad Euro Hispanoamericana</h2>
                             <p>Por favor complete los siguientes datos para continuar con el registro.</p>
                         </div>
                         <form action="config/form.php" method="POST" id="registrationForm">
                             <div class="container">
-                                <div class="row">                                
-                                    <div class="col-md-6 ">
+                                <div class="row">
+                                    <div class="col-md-12 ">
                                         <div class="form-group">
                                             <label for="fullname">Nombre Completo:</label>
                                             <input type="text" class="form-control" id="fullname" name="fullname">
-                                        </div>
+                                        </div>       
                                         <div class="form-group">
-                                            <label for="email">Email:</label>
-                                            <input type="text" class="form-control" id="email" name="email">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="email">Email:</label>
+                                                    <input type="text" class="form-control" id="email" name="email">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="id_dominio">Seleccione su dominio de correo electronico:</label>
+                                                    <select id="id_dominio" name="id_dominio" class="form-control" size="1">
+                                                        <!-- <option value="Aguascalientes">Aguascalientes</option> -->
+                                                        <?php
+                                                        $sql = "SELECT id, nombre FROM dominios";
+                                                        $result = $conn->query($sql);
+                                                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                                        ?>
+                                                            <option value="<?php echo $row['id']; ?>"><?php echo $row['nombre']; ?></option>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="phone">Telefono:</label>
-                                            <input type="text" class="form-control" id="phone" name="phone">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="phone">Telefono:</label>
+                                                <input type="text" class="form-control" id="phone" name="phone">
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="edad">Edad:</label>
-                                            <input type="text" class="form-control" id="edad" name="edad">
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="edad">Edad:</label>
+                                                <input type="text" class="form-control" id="edad" name="edad">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -97,8 +122,8 @@ require_once("config/conexion.php");
                                     <div class="col-md-6">
                                         <div class="card">
                                             <div class="form-group">
-                                                <label for="redes_sociales">Redes Sociales</label>
-                                                <select multiple class="form-control" id="redes_sociales" name="redes_sociales" size="3">
+                                                <label for="id_redes">Redes Sociales</label>
+                                                <select multiple class="form-control" id="id_redes" name="id_redes" size="3">
                                                     <?php
                                                     $sql = "SELECT id, nombre FROM redes_sociales";
                                                     $result = $conn->query($sql);
@@ -114,7 +139,10 @@ require_once("config/conexion.php");
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success">Enviar</button>
+                            <div class="btn-container">
+                                <button type="submit" class="btn btn-success">Enviar</button>
+                            </div>
+
                         </form>
                     </div>
                 </div>
